@@ -9,8 +9,15 @@ for (int i = 0; i < 10 ; i++) {
                     sh "echo 'node: ${NODE_NAME},  index: ${index}, i: ${i}, testListVal: " + testList[index] + "'"
                 
                         writeFile file: "/tmp/branch_${branch}.txt", text: "This file is useful, need to archive it."
+           }
+             node ('python-label'){
+                    sh "echo 'node: ${NODE_NAME},  index: ${index}, i: ${i}, testListVal: " + testList[index] + "'"
+                
+                        writeFile file: "/tmp/branch_${branch}.txt", text: "This file is useful, need to archive it."
                 }
-            }
+           
+           
+           }
       }
 }
 
